@@ -2,6 +2,42 @@
 
 IAsk es una aplicación para administrar tareas. Permite agregar nuevas tareas, y mediante la integración con Llama 3, genera automáticamente la categoría y los pasos a seguir de cada tarea a partir de su descripción.
 
+## Pasos para levantar la aplicación
+
+1. Crear un archivo `.env` en la raíz del proyecto con la siguiente información:
+
+```
+POSTGRES_DB=tasksdb
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+DB_HOST=db
+DB_PORT=5432
+```
+
+2. Construir los contenedores de Docker:
+
+```
+docker compose build
+```
+
+3. Crear las migraciones del backend:
+
+```
+docker compose run backend python manage.py makemigrations
+```
+
+4. Aplicar las migraciones:
+
+```
+docker compose run backend python manage.py migrate
+```
+
+5. Levantar la aplicación completa:
+
+```
+docker compose up
+```
+
 ## Tecnologías utilizadas
 
 **Backend:**
