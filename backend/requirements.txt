@@ -4,3 +4,4 @@ langchain==1.0.7
 langchain-community==0.4.1
 langchain-ollama==1.0.0
 psycopg2-binary==2.9.9
+django-cors-headers==4.4.0
